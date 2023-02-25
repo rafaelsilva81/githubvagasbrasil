@@ -24,14 +24,14 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <header className="flex flex-col justify-between w-screen gap-3 p-4 px-6 md:gap-20 md:flex-row bg-contrast">
+    <header className="flex flex-col justify-between w-full gap-3 p-4 px-6 md:gap-20 md:flex-row bg-secondary">
       {/* TODO: Search bar */}
       <div className="flex items-center flex-1 gap-3">
         <Image src={githubLogoBR} alt="logo" width={30} />
         <input
           type="text"
           placeholder="Pesquisar vagas"
-          className="w-64 p-1 text-sm text-gray-300 border border-gray-600 rounded-md bg-background"
+          className="w-64 p-1 text-sm text-gray-300 border rounded-md border-primary bg-background"
         />
       </div>
 
@@ -41,11 +41,7 @@ const Header = () => {
           <Link
             key={i}
             href={page.path}
-            className={clsx("font-semibold", {
-              "text-gray-200": page.path === router.pathname,
-              "hover:opacity-70 active:opacity-50":
-                page.path !== router.pathname,
-            })}
+            className="font-semibold hover:opacity-70 active:opacity-50"
           >
             {page.name}
           </Link>
