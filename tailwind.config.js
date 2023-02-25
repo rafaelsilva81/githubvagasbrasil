@@ -6,7 +6,11 @@ module.exports = {
       colors: {
         background: "#1c2128",
         primary: "#adbac7",
-        contrast: "#2d333b",
+        secondary: "#2d333b",
+        tertiary: "#22272e",
+      },
+      borderColor: {
+        primary: "#444c56",
       },
     },
     fontFamily: {
