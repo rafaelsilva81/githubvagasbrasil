@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import repositoryList from "@/utils/repositoryList";
 import Header from "@/components/Header";
 import {
@@ -11,15 +11,30 @@ import { useQuery } from "@tanstack/react-query";
 import api from "@/utils/axios";
 import { AxiosError } from "axios";
 import Footer from "@/components/Footer";
-import { Listbox } from "@headlessui/react";
 import Loader from "@/components/Loader";
 import dayjs from "dayjs";
+import { useAtom } from "jotai";
+import lastAccessedAtom from "@/utils/lastAccessed";
 
 const Vagas = () => {
+  const [lastAccessed, setLastAccessed] = useAtom(lastAccessedAtom);
   const router = useRouter();
   const [filter, setFilter] = useState("");
   const [page, setPage] = useState(1);
   const { repo } = router.query as { repo: string };
+
+  useEffect(() => {
+    if (!selectedRepo) {
+      return;
+    } else if (lastAccessed.includes(selectedRepo.slug)) {
+      return; // já está na lista
+    } else if (lastAccessed.length < 3) {
+      setLastAccessed([...lastAccessed, selectedRepo.slug]);
+    } else {
+      setLastAccessed([...lastAccessed.slice(1), selectedRepo.slug]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const selectedRepo = repositoryList.find((item) => {
     return item.slug === repo;
