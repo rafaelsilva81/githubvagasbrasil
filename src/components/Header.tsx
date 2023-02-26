@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import githubLogoBR from "@/assets/logo-final.png";
 import Link from "next/link";
-import clsx from "clsx";
 import { useRouter } from "next/router";
 
 const pages = [
@@ -15,8 +14,9 @@ const pages = [
     path: "/sobre",
   },
   {
-    name: "Contribuir",
-    path: "/contribuir",
+    name: "Autor",
+    path: "https://rafaeldev.me",
+    target: "_blank",
   },
 ];
 
@@ -39,6 +39,8 @@ const Header = () => {
           <Link
             key={i}
             href={page.path}
+            target={page.target || "_self"}
+            rel="noopener noreferrer"
             className="font-semibold hover:opacity-70 active:opacity-50"
           >
             {page.name}
