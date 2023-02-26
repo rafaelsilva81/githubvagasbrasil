@@ -30,7 +30,7 @@ const repoList: RepositoryData[] = [
   {
     name: "DevOps",
     icon: "FaServer",
-    slug: "DevOps-Brazil/Vagas/issues",
+    slug: "DevOps-Brazil/Vagas",
     type: "categoria",
   },
   {

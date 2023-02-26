@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="tracking-wide text-primary bg-background">
+      <body className="text-primary bg-background">
         <Main />
         <NextScript />
       </body>
