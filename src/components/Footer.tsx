@@ -7,11 +7,21 @@ const Footer = () => {
   return (
     <footer className="w-full p-2 px-6 bg-secondary">
       <div className="flex items-center justify-between">
-        <a href="#" className="text-sm font-semibold hover:opacity-70">
+        <a
+          href="https://github.com/rafaelsilva81/githubvagasbrasil"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-semibold hover:opacity-70"
+        >
           🇧🇷 GithubVagasBR — {currYear}
         </a>
 
-        <a href="#" className="text-xs hover:text-blue-500">
+        <a
+          href="https://github.com/rafaelsilva81"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs hover:text-blue-500"
+        >
           Desenvolvido por @rafaelsilva81
         </a>
       </div>

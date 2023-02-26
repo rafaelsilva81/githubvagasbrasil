@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-const markdown = `## Sobre o projeto
+const markdown = `# Sobre o projeto
 
 Esse é um projeto open source que visa ajudar desenvolvedores brasileiros a encontrarem vagas divulgadas pelo github mais facilmente. Esse projeto foi desenvolvido por [@rafaelsilva81](https://github.com/rafaelsilva81)
 
@@ -27,7 +27,7 @@ const Sobre = () => {
       <Header />
 
       <main className="flex flex-col w-full p-8">
-        <article className="flex flex-col min-w-full p-8 prose prose-md border prose-invert border-primary rounded-md">
+        <article className="flex flex-col min-w-full prose prose-md p-8 px-20 border prose-invert border-primary rounded-md">
           <ReactMarkdown className="text-white">{markdown}</ReactMarkdown>
         </article>
       </main>
