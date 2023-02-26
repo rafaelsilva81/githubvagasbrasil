@@ -26,14 +26,12 @@ const Header = () => {
   return (
     <header className="flex flex-col justify-between w-full gap-3 p-4 px-6 md:gap-20 md:flex-row bg-secondary">
       {/* TODO: Search bar */}
-      <div className="flex items-center flex-1 gap-3">
+      <Link className="flex items-center flex-1 gap-2" href="/">
         <Image src={githubLogoBR} alt="logo" width={30} />
-        <input
-          type="text"
-          placeholder="Pesquisar vagas"
-          className="w-64 p-1 text-sm text-gray-300 border rounded-md border-primary bg-background"
-        />
-      </div>
+        <span className="text-sm font-semibold text-primary">
+          GithubVagasBR
+        </span>
+      </Link>
 
       {/* Pages */}
       <div className="flex items-center gap-5">
