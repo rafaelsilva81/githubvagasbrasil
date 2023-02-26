@@ -33,7 +33,7 @@ const RepoCard = ({ repository }: { repository: RepositoryData }) => {
 
         <div className="flex gap-2 mt-4">
           <Link
-            href={`/vagas/${encodedSlug}`}
+            href={`/vagas/repo/${encodedSlug}`}
             className="px-3 py-2 text-sm font-semibold border rounded-md border-primary bg-secondary hover:opacity-60 active:opacity-30"
           >
             Ver vagas
