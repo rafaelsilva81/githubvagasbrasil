@@ -44,11 +44,11 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://githubvagasbr.vercel.app/og-image.png"
+          content="https://githubvagasbrasil.vercel.app/og-image.png"
         />
         <meta
           property="og:image:secure_url"
-          content="https://githubvagasbr.vercel.app/og-image.png"
+          content="https://githubvagasbrasil.vercel.app/og-image.png"
         />
         <meta property="og:image:alt" content="Github Vagas Brasil" />
         <meta property="og:image:type" content="image/png" />
