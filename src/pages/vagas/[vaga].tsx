@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import rehypeRaw from "rehype-raw";
 
 const Vaga = () => {
   const router = useRouter();
@@ -73,7 +74,7 @@ const Vaga = () => {
 
         {/* corpo */}
         <article className="flex flex-col min-w-full p-5 pt-0 prose border border-t-0 prose-invert border-primary rounded-b-md">
-          <ReactMarkdown className="text-white">
+          <ReactMarkdown className="text-white" rehypePlugins={[rehypeRaw]}>
             {issueObject?.body || ""}
           </ReactMarkdown>
         </article>
