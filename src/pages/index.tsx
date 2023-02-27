@@ -5,6 +5,7 @@ import RepoCard from "@/components/RepoCard";
 import lastAccessedAtom from "@/utils/lastAccessed";
 import repositoryList from "@/utils/repositoryList";
 import { useAtom } from "jotai";
+import Head from "next/head";
 
 export default function Home() {
   const porCategoria = repositoryList.filter(
@@ -22,6 +23,18 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Github Vagas Brasil</title>
+        <meta
+          name="description"
+          content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
+        />
+        <meta
+          name="keywords"
+          content="Github, Vagas, Desenvolvimento, Programação, Frontend, Backend, Fullstack, Mobile, DevOps, QA, Estágio, Júnior, Pleno, Sênior, Remoto, Presencial, Home Office"
+        />
+      </Head>
+
       <Header />
 
       <main className="flex flex-col gap-10 p-10">

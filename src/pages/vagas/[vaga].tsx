@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
@@ -24,6 +25,18 @@ const Vaga = () => {
 
   return (
     <>
+      <Head>
+        <title>{issueObject?.title} - GithubVagasBR </title>
+        <meta
+          name="description"
+          content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
+        />
+        <meta
+          name="keywords"
+          content="Github, Vagas, Desenvolvimento, Programação, Frontend, Backend, Fullstack, Mobile, DevOps, QA, Estágio, Júnior, Pleno, Sênior, Remoto, Presencial, Home Office"
+        />
+      </Head>
+
       <Header />
 
       <main className="flex flex-col w-full p-8">

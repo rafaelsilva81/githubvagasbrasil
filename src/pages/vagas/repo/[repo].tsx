@@ -15,6 +15,7 @@ import Loader from "@/components/Loader";
 import dayjs from "dayjs";
 import { useAtom } from "jotai";
 import lastAccessedAtom from "@/utils/lastAccessed";
+import Head from "next/head";
 
 const Vagas = () => {
   const [lastAccessed, setLastAccessed] = useAtom(lastAccessedAtom);
@@ -80,6 +81,17 @@ const Vagas = () => {
 
   return (
     <>
+      <Head>
+        <title>Vagas de {selectedRepo.name} - GithubVagasBR </title>
+        <meta
+          name="description"
+          content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
+        />
+        <meta
+          name="keywords"
+          content="Github, Vagas, Desenvolvimento, Programação, Frontend, Backend, Fullstack, Mobile, DevOps, QA, Estágio, Júnior, Pleno, Sênior, Remoto, Presencial, Home Office"
+        />
+      </Head>
       <Header />
 
       <main className="flex flex-col p-10">
