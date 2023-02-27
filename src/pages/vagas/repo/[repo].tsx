@@ -60,6 +60,7 @@ const Vagas = () => {
     enabled: !!repo && !!selectedRepo,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
+    staleTime: 1000 * 60 * 60 * 24, // 24 horas
   });
 
   if (!selectedRepo || !repo || error) {
