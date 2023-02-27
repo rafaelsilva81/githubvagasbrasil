@@ -45,7 +45,10 @@ export default function Document() {
           property="og:description"
           content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
         />
-        <meta property="og:image" content="https://i.imgur.com/udnJY0j.png" />
+        <meta
+          property="og:image"
+          content="https://githubvagasbrasil.vercel.app/og-image.png"
+        />
         {/* Twitter tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -61,7 +64,10 @@ export default function Document() {
           name="twitter:description"
           content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
         />
-        <meta name="twitter:image" content="https://i.imgur.com/udnJY0j.png" />
+        <meta
+          name="twitter:image"
+          content="https://githubvagasbrasil.vercel.app/og-image.png"
+        />
       </Head>
       <body className="text-primary bg-background">
         <Main />
