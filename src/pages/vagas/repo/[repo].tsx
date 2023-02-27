@@ -7,7 +7,7 @@ import {
   GoTriangleLeft,
   GoTriangleRight,
 } from "react-icons/go";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import api from "@/utils/axios";
 import { AxiosError } from "axios";
 import Footer from "@/components/Footer";
@@ -18,6 +18,7 @@ import lastAccessedAtom from "@/utils/lastAccessed";
 import Head from "next/head";
 
 const Vagas = () => {
+  const queryClient = useQueryClient();
   const [lastAccessed, setLastAccessed] = useAtom(lastAccessedAtom);
   const router = useRouter();
   const [filter, setFilter] = useState("");
@@ -115,7 +116,10 @@ const Vagas = () => {
           <div className="flex items-center gap-2">
             <button
               className="p-2 text-sm rounded-md hover:bg-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={() => setPage((prev) => prev - 1)}
+              onClick={() => {
+                queryClient.invalidateQueries(["issues", filter, page, repo]);
+                setPage((prev) => prev - 1);
+              }}
               disabled={page === 1}
             >
               <GoTriangleLeft />
@@ -123,7 +127,10 @@ const Vagas = () => {
             <span className="text-sm">{page}</span>
             <button
               className="p-2 text-sm rounded-md hover:bg-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={() => setPage((prev) => prev + 1)}
+              onClick={() => {
+                queryClient.invalidateQueries(["issues", filter, page, repo]);
+                setPage((prev) => prev + 1);
+              }}
             >
               <GoTriangleRight />
             </button>
