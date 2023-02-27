@@ -35,7 +35,10 @@ export default function Document() {
           content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
         {/* OG Tags */}
-        <meta property="og:locale" content="pt_BR" />
+        <meta
+          property="og:url"
+          content="https://githubvagasbrasil.vercel.app/"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Github Vagas Brasil" />
         <meta
@@ -43,6 +46,22 @@ export default function Document() {
           content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
         />
         <meta property="og:image" content="https://i.imgur.com/udnJY0j.png" />
+        {/* Twitter tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:domain"
+          content="githubvagasbrasil.vercel.app"
+        />
+        <meta
+          property="twitter:url"
+          content="https://githubvagasbrasil.vercel.app/"
+        />
+        <meta name="twitter:title" content="Github Vagas Brasil" />
+        <meta
+          name="twitter:description"
+          content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
+        />
+        <meta name="twitter:image" content="https://i.imgur.com/udnJY0j.png" />
       </Head>
       <body className="text-primary bg-background">
         <Main />
