@@ -2,11 +2,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import repositoryList from "@/utils/repositoryList";
 import Header from "@/components/Header";
-import {
-  GoTriangleDown,
-  GoTriangleLeft,
-  GoTriangleRight,
-} from "react-icons/go";
+import { GoTriangleLeft, GoTriangleRight } from "react-icons/go";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import api from "@/utils/axios";
 import { AxiosError } from "axios";
@@ -46,12 +42,10 @@ const Vagas = () => {
     data: issues,
     isLoading,
     error,
-    refetch,
-  } = useQuery<Issue[], AxiosError>({
-    queryKey: ["issues", filter, repo],
+  } = useQuery<Issue[], AxiosError>(["issues", filter, page, repo], {
     queryFn: async () => {
       const res = await api.get(
-        `/repos/${repo}/issues?page=${page}?labels=${encodeURIComponent(
+        `/repos/${repo}/issues?page=${page}&labels=${encodeURIComponent(
           filter || ""
         )}`
       );
@@ -60,7 +54,6 @@ const Vagas = () => {
     enabled: !!repo && !!selectedRepo,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
-    staleTime: 1000 * 60 * 60 * 24, // 24 horas
   });
 
   if (!selectedRepo || !repo || error) {
@@ -119,11 +112,7 @@ const Vagas = () => {
             <button
               className="p-2 text-sm rounded-md hover:bg-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => {
-                setPage((prev) => {
-                  if (prev === 1) return prev;
-                  return prev - 1;
-                });
-                refetch();
+                setPage((prev) => prev - 1);
               }}
               disabled={page === 1}
             >
@@ -134,7 +123,6 @@ const Vagas = () => {
               className="p-2 text-sm rounded-md hover:bg-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => {
                 setPage((prev) => prev + 1);
-                refetch();
               }}
             >
               <GoTriangleRight />
