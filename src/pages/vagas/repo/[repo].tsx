@@ -46,6 +46,7 @@ const Vagas = () => {
     data: issues,
     isLoading,
     error,
+    refetch,
   } = useQuery<Issue[], AxiosError>({
     queryKey: ["issues", filter, page, repo],
     queryFn: async () => {
@@ -117,8 +118,11 @@ const Vagas = () => {
             <button
               className="p-2 text-sm rounded-md hover:bg-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => {
-                queryClient.invalidateQueries(["issues", filter, page, repo]);
-                setPage((prev) => prev - 1);
+                setPage((prev) => {
+                  if (prev === 1) return prev;
+                  return prev - 1;
+                });
+                refetch();
               }}
               disabled={page === 1}
             >
@@ -128,8 +132,8 @@ const Vagas = () => {
             <button
               className="p-2 text-sm rounded-md hover:bg-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => {
-                queryClient.invalidateQueries(["issues", filter, page, repo]);
                 setPage((prev) => prev + 1);
+                refetch();
               }}
             >
               <GoTriangleRight />
