@@ -101,7 +101,7 @@ const Vagas = () => {
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="p-2 text-sm rounded-md bg-secondary border-primary"
+            className="w-1/3 p-2 text-sm rounded-md bg-secondary border-primary"
           >
             <option value="">Todos</option>
             {labels.map((label) => (
@@ -149,7 +149,7 @@ const Vagas = () => {
               <span className="font-semibold text-primary hover:text-blue-500">
                 {issue.title}
               </span>
-              <div className="flex items-center gap-1 text-gray-500">
+              <div className="flex flex-wrap items-center gap-1 text-gray-500">
                 {issue.labels.map((label) => (
                   <span
                     key={label.id}
@@ -163,7 +163,7 @@ const Vagas = () => {
                 ))}
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4 md:flex-row">
               <span className="text-xs text-gray-500">
                 #{issue.number} aberta há{" "}
                 {dayjs().diff(dayjs(issue.created_at), "day")} dia(s)
