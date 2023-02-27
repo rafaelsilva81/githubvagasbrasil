@@ -34,6 +34,24 @@ export default function Document() {
           name="robots"
           content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
+        {/* OG Tags */}
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Github Vagas Brasil" />
+        <meta
+          property="og:description"
+          content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
+        />
+        <meta
+          property="og:image"
+          content="https://githubvagasbr.vercel.app/og-image.png"
+        />
+        <meta
+          property="og:image:secure_url"
+          content="https://githubvagasbr.vercel.app/og-image.png"
+        />
+        <meta property="og:image:alt" content="Github Vagas Brasil" />
+        <meta property="og:image:type" content="image/png" />
       </Head>
       <body className="text-primary bg-background">
         <Main />
