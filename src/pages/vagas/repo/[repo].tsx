@@ -48,7 +48,7 @@ const Vagas = () => {
     error,
     refetch,
   } = useQuery<Issue[], AxiosError>({
-    queryKey: ["issues", filter, page, repo],
+    queryKey: ["issues", filter, repo],
     queryFn: async () => {
       const res = await api.get(
         `/repos/${repo}/issues?page=${page}?labels=${encodeURIComponent(
