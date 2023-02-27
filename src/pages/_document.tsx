@@ -42,16 +42,7 @@ export default function Document() {
           property="og:description"
           content="Divulgação de vagas para desenvolvedores brasileiros através do Github"
         />
-        <meta
-          property="og:image"
-          content="https://githubvagasbrasil.vercel.app/og-image.png"
-        />
-        <meta
-          property="og:image:secure_url"
-          content="https://githubvagasbrasil.vercel.app/og-image.png"
-        />
-        <meta property="og:image:alt" content="Github Vagas Brasil" />
-        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image" content="https://i.imgur.com/udnJY0j.png" />
       </Head>
       <body className="text-primary bg-background">
         <Main />
