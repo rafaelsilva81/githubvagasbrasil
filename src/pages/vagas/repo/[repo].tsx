@@ -94,18 +94,21 @@ const Vagas = () => {
         {/* Top-bar */}
         <div className="flex items-center justify-between w-full gap-4 p-2 px-6 border rounded-t-md bg-secondary border-primary">
           {/* Label filter */}
-          <select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="w-1/3 p-2 text-sm rounded-md bg-secondary border-primary"
-          >
-            <option value="">Todos</option>
-            {labels.map((label) => (
-              <option key={label} value={label}>
-                {label}
-              </option>
-            ))}
-          </select>
+          <div className="flex flex-col w-1/3 gap-2 p-1 text-sm appearance-none md:w-1/5 border-primary">
+            <span className="mr-2">Filtrar por: </span>
+            <select
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+              className="p-2 rounded-md bg-tertiary"
+            >
+              <option value="">Todos</option>
+              {labels.map((label) => (
+                <option key={label} value={label}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </div>
 
           {/* Pagination */}
           <div className="flex items-center gap-2">
